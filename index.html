@@ -35,7 +35,15 @@
                 </div>
             </div>
             <div class="col-md-9 col-12 justify-content-center">
-                <div class="tab-content container-fluid" id="nav-tabContent">
+                <ul class="nav nav-tabs" id="nav-tab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="aboutme-tab" data-toggle="tab" href="#aboutme" role="tab" aria-controls="aboutme" aria-selected="true">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="projects-tab" data-toggle="tab" href="#projects" role="tab" aria-controls="projects" aria-selected="false">Projects</a>
+                    </li>
+                </ul>
+                <div class="tab-content container-fluid pt-3" id="nav-tabContent">
                     <div class="tab-pane fade show active" id="aboutme" role="tabpanel">
                         <h1>James Boggs</h1>
                         <p align="justify" class="lead">
@@ -72,30 +80,113 @@
                             artificial intelligences. Those early experiences cemented my fascination with intelligence
                             — both natural and artificial — and continue to shape my work today.
                         </p>
-                        <p align="justify" class="lead">
-                            My goal is to uncover the principles of intelligence while applying them to real-world
-                            problems, advancing both fundamental science and practical applications that benefit
-                            humanity. I believe the next frontier in AI lies not in chasing full AGI immediately, but in
-                            deepening AI’s understanding of the world through embodied, multimodal grounding and robust
-                            internal world models. Thus I believe that LLMs, while incredibly powerful tools, are not
-                            sufficient for achieving human-level performance in a wide variety of tasks, particularly in
-                            embodied contexts.
-                        </p>
-                        <p align="justify" class="lead">
-                            My goal is to uncover the principles of intelligence while applying them to real-world
-                            problems, advancing both fundamental science and practical applications that benefit
-                            humanity. I believe the next frontier in AI lies not in chasing full AGI immediately, but in
-                            deepening AI’s understanding of the world through embodied, multimodal grounding and robust
-                            internal world models. Thus I believe that LLMs, while incredibly powerful tools, are not
-                            sufficient for achieving human-level performance in a wide variety of tasks, particularly in
-                            embodied contexts.
-                        </p>
-                        <p align="justify" class="lead">
-                            Side note: I'm a big fan of em dashes — I have been since I wrote for the student newspaper
-                            in undergrad — and I won't allow ChatGPT to make me give them up. Frankly, I think it's
-                            indicative of the power of LLMs that they correctly identified the elegance and utility of
-                            the em dash, a punctuation cleaner and sharper than parentheses. 
-                        </p>
+                    </div>
+                    <div class="tab-pane fade" id="projects" role="tabpanel">
+                        <h1>Projects</h1>
+                        <p class="lead">A selection of personal projects I've built or am actively developing. Source code is available on <a href="https://github.com/JBoggsy">my GitHub</a>.</p>
+
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h4 class="card-title">Shortlist &mdash; AI-Powered Job Application Tracker</h4>
+                                <p class="card-text">
+                                    A cross-platform desktop and web application that streamlines the job search
+                                    process. Shortlist features an AI chat assistant that can search multiple job
+                                    boards, scrape postings from URLs, and automatically populate a tracking
+                                    dashboard with structured application data. Users can manage their full hiring
+                                    pipeline &mdash; from application todos and cover letters to interview prep
+                                    &mdash; using a page-based UI with a rich text document editor and switchable
+                                    AI agent modes (freeform or orchestrated DSPy pipeline). The app supports
+                                    multiple LLM providers (Anthropic, OpenAI, Gemini, or local models via Ollama)
+                                    through LiteLLM, and packages as native desktop apps for Windows, macOS, and
+                                    Linux using Tauri.
+                                </p>
+                                <p class="card-text"><strong>Current progress:</strong>
+                                    At v0.12.1 with published cross-platform installers. Recent work includes a
+                                    telemetry system for DSPy optimization, improved resume specialization
+                                    workflows, and rate-limit handling for job search APIs.
+                                </p>
+                                <span class="badge badge-primary">Python</span>
+                                <span class="badge badge-primary">React</span>
+                                <span class="badge badge-primary">Flask</span>
+                                <span class="badge badge-primary">Tauri</span>
+                                <span class="badge badge-primary">LLM Integration</span>
+                                <span class="badge badge-secondary">v0.12.1 &middot; Active</span>
+                            </div>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h4 class="card-title">User Environment Simulator</h4>
+                                <p class="card-text">
+                                    A pip-installable testing and prototyping platform for AI personal assistants.
+                                    UES provides a web UI and comprehensive REST API (95 endpoints) that simulates
+                                    a complete user environment across six modalities &mdash; email, SMS, calendar,
+                                    chat, location, and weather &mdash; so developers can create realistic,
+                                    replicable test scenarios for assistant agents. Features an event-sourcing
+                                    architecture with configurable time control, API key-based authentication,
+                                    WebSocket and webhook support, multi-agent coordination via a hold system,
+                                    and a built-in agent testing harness for automated evaluation. Includes a
+                                    Python client library with sync and async support.
+                                </p>
+                                <p class="card-text"><strong>Current progress:</strong>
+                                    At v0.3.0 with all six modalities fully implemented and 3,720 tests
+                                    passing. Published as a pip-installable package. Agent testing harness,
+                                    scenario management, and a full Python client library are all functional.
+                                </p>
+                                <span class="badge badge-primary">Python</span>
+                                <span class="badge badge-primary">FastAPI</span>
+                                <span class="badge badge-primary">Event Sourcing</span>
+                                <span class="badge badge-primary">Pydantic</span>
+                                <span class="badge badge-secondary">v0.3.0 &middot; Functional</span>
+                            </div>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h4 class="card-title">Hopfield Network Explorer</h4>
+                                <p class="card-text">
+                                    An interactive Jupyter notebook that implements Hopfield networks &mdash; a class of
+                                    recurrent neural networks used as content-addressable (associative) memory &mdash;
+                                    from scratch. Covers the underlying theory of energy functions and Hebbian weight
+                                    learning, then demonstrates storing, corrupting, and retrieving binary image patterns,
+                                    with visualizations throughout. A self-contained educational resource.
+                                </p>
+                                <p class="card-text"><strong>Current progress:</strong>
+                                    Complete. The notebook covers theory, implementation, and visualization
+                                    end-to-end and is ready to share as-is.
+                                </p>
+                                <span class="badge badge-primary">Python</span>
+                                <span class="badge badge-primary">NumPy</span>
+                                <span class="badge badge-primary">Matplotlib</span>
+                                <span class="badge badge-primary">Neural Networks</span>
+                                <span class="badge badge-secondary">Complete</span>
+                            </div>
+                        </div>
+
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h4 class="card-title">AIPA &mdash; AI Personal Assistant</h4>
+                                <p class="card-text">
+                                    A proactive AI secretary designed to manage your day. AIPA reads your emails,
+                                    checks your calendar, monitors the weather, and delivers personalized daily
+                                    briefings &mdash; including wake-up calls via text-to-speech. The system uses
+                                    a custom agent framework with Jinja2 prompt templating and tool calling for
+                                    tasks like geolocation, weather retrieval, email management, and smart device
+                                    control. Designed to integrate with Google APIs (Gmail, Calendar) and the
+                                    OpenWeather API.
+                                </p>
+                                <p class="card-text"><strong>Current progress:</strong>
+                                    Early stage and currently dormant (last updated November 2025). A custom
+                                    agent framework with tool calling, task management, and prompt templating
+                                    is implemented, along with basic integrations for email, weather, and
+                                    geolocation.
+                                </p>
+                                <span class="badge badge-primary">Python</span>
+                                <span class="badge badge-primary">Multi-Agent Systems</span>
+                                <span class="badge badge-primary">Google APIs</span>
+                                <span class="badge badge-secondary">Early Development</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
